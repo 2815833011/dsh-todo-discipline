@@ -64,7 +64,10 @@ runtime-context 的接纳规则是「拼接文本与保留快照不同才注入�
 
 ```bash
 cd ~/.dsh/profiles/desktop
-pnpm add link:~/Documents/dsh-workspace/link-plugins/dsh-todo-discipline
+pnpm add link:/absolute/path/to/dsh-workspace/link-plugins/dsh-todo-discipline
+
+   # Windows 上 `~` 不会展开，直接给绝对路径，例如：
+   #   pnpm add link:C:/Users/you/Documents/dsh-workspace/link-plugins/dsh-todo-discipline
 ```
 
 profile 的 `dsh.profile.bundles` 里加 `dsh-todo-discipline`。bundle 的
