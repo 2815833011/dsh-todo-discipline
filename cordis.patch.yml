@@ -1,0 +1,18 @@
+# Bundle layer: DSH loads this file automatically when dsh-todo-discipline is
+# enabled. Do NOT copy its insert block into the profile's cordis.patch.yml:
+# doing so duplicates entry IDs and prevents Settings from saving.
+# Keep profile overrides as top-level `- id: todo-discipline` rows instead.
+#
+# The row name resolves from the profile's own node_modules, where
+# `pnpm add link:<workspace>/dsh-todo-discipline` installed this package.
+- insert:
+    - id: todo-discipline
+      name: 'dsh-todo-discipline'
+      config:
+        # Master switch; a disabled row registers nothing at all.
+        enabled: true
+        # Steps without a todo_write before the state line asks again. The
+        # reminder repeats once per window rather than on every step: the loop
+        # admits a runtime-context snapshot only when its text changes, so a
+        # per-step counter would inject a user message on every step.
+        staleSteps: 8

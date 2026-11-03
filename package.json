@@ -1,0 +1,29 @@
+{
+  "name": "dsh-todo-discipline",
+  "version": "0.1.0",
+  "description": "Keeps the todo list alive across long DSH sessions: a standing policy in the system prompt plus a runtime-context state line restated after compaction.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "todo",
+    "context",
+    "compaction"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "state.js",
+    "schema.js",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
