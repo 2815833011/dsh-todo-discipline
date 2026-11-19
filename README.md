@@ -120,3 +120,7 @@ node test-v4.mjs       # v4 消息格式兼容性
 ## License
 
 MIT
+
+## 兼容性 / Compatibility
+
+- dsh **0.2.2-rc.5**：新增 `scripts.test` = `node test-state.mjs && node test-host.mjs && node test-v4.mjs`，三套自检全绿（含 v4 消息格式的注入准入）。
